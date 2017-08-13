@@ -38,6 +38,7 @@ public abstract class UsingFlumeRPCApp {
 
   protected void parseCommandLine(String args[])
     throws ParseException {
+	LOGGER.info("inside parseCommandline");
     setClientTypeInConfig(config);
     Options opts = new Options();
 
@@ -157,7 +158,7 @@ public abstract class UsingFlumeRPCApp {
     for (int i = 0; i < 5; i++) {
       executor.submit(new Runnable() {
         final int total = 100;
-        @Override
+       // @Override
         public void run() {
           int i = 0;
           while (i++ < total) {
@@ -171,7 +172,7 @@ public abstract class UsingFlumeRPCApp {
     // Set a shutdown hook to shutdown all the threads and the
     // executor itself
     Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-      @Override
+    //  @Override
       public void run() {
         executor.shutdown();
         try {

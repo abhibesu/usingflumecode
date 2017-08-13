@@ -95,7 +95,7 @@ public class UsingFlumeEmbeddedAgent {
     agent.configure(config);
     agent.start();
     Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-      @Override
+      //@Override
       public void run() {
         agent.stop();
       }
